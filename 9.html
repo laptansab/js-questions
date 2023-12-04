@@ -6,6 +6,34 @@
     <title>Prime Number Checker</title>
 </head>
 <body>
-    
+    <input type="text" id="num" onkeyup="primeNumberChecker()">
+    <!-- <input type="button" value="check" onclick="primeNumberChecker()"> -->
+    <p id="result"></p>
+    <script>
+        
+        function primeNumberChecker() {
+            let num = document.getElementById('num').value
+            // let btn = document.getElementById('check')
+            let result = document.getElementById('result')
+            let isPrime = true
+            if (parseInt(num) === 1) {
+                result.innerText = num + " is neither prime nor composite number."
+            }else if(num > 1 ){
+                for (let i = 2;i<num;i++) {
+                    if (num % i == 0 ) {
+                        isPrime = false
+                        break
+                    }
+                }
+                if (isPrime) {
+                    result.innerText = num + " is a prime number."
+                }else{
+                    result.innerText = num + " is not a prime  number."
+                }
+            }else{
+                result.innerText = "The number is not a prime number."
+            }
+        }
+    </script>
 </body>
 </html>
