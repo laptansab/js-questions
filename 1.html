@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculation</title>
+  </head>
+  <body>
+    <label for="">Enter Value a</label>
+    <input type="text" name="" id="a" />
+    <br />
+    <br />
+    <label for="">Enter Value b</label>
+    <input type="text" name="" id="b" />
+    <br />
+    <br />
+    <label for="">Enter Value c</label>
+    <input type="text" name="" id="c" />
+    <br />
+    <br />
+    <label for="">Result </label>
+    <input type="text" name="" id="x" readonly />
+    <br /><br />
+    <input type="button" value="ok" id="btn" />
+
+    <script>
+      btn.addEventListener("click", function () {
+        let a = parseInt(document.getElementById("a").value) || 0;
+        let b = parseInt(document.getElementById("b").value) || 0;
+        let c = parseInt(document.getElementById("c").value) || 0;
+
+        let x = Math.pow(a, 3) + Math.pow(b, 2) + c;
+        document.getElementById("x").value = x;
+      });
+    </script>
+  </body>
+</html>
