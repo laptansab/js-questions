@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers</title>
+    <style>
+        input{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="button" id="btn">
+    <p id="p"></p>
+    <script>
+        let btn = document.getElementById('btn')
+        let text = document.getElementById('p')
+        btn.addEventListener('focus',function () {
+            btn.style.backgroundColor = "red"
+        })
+        btn.addEventListener('blur',function () {
+            btn.style.backgroundColor = "yellow"
+        })
+        btn.addEventListener('click',function () {
+            text.innerText = "Button is clicked"
+        })
+    </script>
+</body>
+</html>
