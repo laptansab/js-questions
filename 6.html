@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<body>
+    <label for="">first number</label>
+    <input type="text" name="" id="firstNum">
+    <br><br>
+    <label for="">second number</label>
+    <input type="text" name="" id="secondNum">
+    <br><br>
+    <label for="">result</label>
+    <input type="text" name="" id="result" readonly>
+    <br><br>
+    <input type="button" value="OK" id="btn">
+
+    <script>
+
+        let fNum = document.getElementById('firstNum');
+        let sNum = document.getElementById('secondNum');
+        let result = document.getElementById('result');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function () {
+            if(fNum.value > sNum.value){
+                let sq = parseInt(Math.pow(fNum.value,2));
+                let cub = parseInt(Math.pow(sNum.value,3)); 
+                let sum = sq + cub;
+                result.value = sum;
+            }else if(sNum.value > fNum.value){
+                let sq = parseInt(Math.pow(sNum.value,2))
+                let cub = parseInt(Math.pow(fNum.value,3)); 
+                let sum = sq + cub;
+                result.value = sum
+            }
+        })
+    </script>
+</body>
+</html>
