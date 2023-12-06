@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldest Person Finder</title>
+</head>
+<body>
+    <label for="name">Enter Name:</label>
+    <input type="text" id="name" />
+    <br /><br />
+    <label for="age">Enter Age:</label>
+    <input type="text" id="age" />
+    <br /><br />
+    <button onclick="addPerson()">Add Person</button>
+    <br /><br />
+    <button onclick="displayOldestPerson()">Display Oldest Person</button>
+    <br /><br />
+    <label for="result">Oldest Person:</label>
+    <input type="text" id="result" readonly />
+    
+    <script>
+        // Arrays to store names and ages
+        let names = [];
+        let ages = [];
+
+        function addPerson() {
+            let name = document.getElementById("name").value;
+            let age = parseInt(document.getElementById("age").value);
+
+            if (name && !isNaN(age)) {
+                names.push(name);
+                ages.push(age);
+
+                // Clear input fields
+                document.getElementById("name").value = "";
+                document.getElementById("age").value = "";
+            } else {
+                alert("Please enter valid name and age.");
+            }
+        }
+
+        function displayOldestPerson() {
+            let result = document.getElementById("result");
+
+            if (names.length > 0) {
+                let indexOfOldest = ages.indexOf(Math.max(...ages));
+
+                if (indexOfOldest !== -1) {
+                    result.value = names[indexOfOldest];
+                } else {
+                    result.value = "Error finding the oldest person.";
+                }
+            } else {
+                result.value = "No data available.";
+            }
+        }
+    </script>
+</body>
+</html>
