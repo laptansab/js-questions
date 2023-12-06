@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even Odd Checker</title>
+  </head>
+  <body>
+    <label for="num">Enter a number:</label>
+    <input type="text" id="num" />
+    <input type="button" value="Display" id="btn" />
+    <p id="result"></p>
+    <script>
+      let btn = document.getElementById("btn");
+
+      btn.addEventListener("click", function () {
+        let numInput = document.getElementById("num");
+        let resultPara = document.getElementById("result");
+
+        let num = parseInt(numInput.value);
+
+        if (!isNaN(num)) {
+          resultPara.innerText =
+            num % 2 == 0 ? `${num} is even number` : `${num} is odd number`;
+        } else {
+          resultPara.innerText = "Enter a valid number";
+        }
+      });
+    </script>
+  </body>
 </html>
